@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sifa — marketing website
 
-## Getting Started
+Marketing site for **Sifa**, a B2B SaaS that turns a topic into a complete
+lesson pack — lesson plan, slides, quiz, homework and marking guide — for
+African primary and secondary schools, aligned to the WAEC / NECO / NERDC
+scheme of work.
 
-First, run the development server:
+This repo is the marketing site only. No product application code lives here.
+
+## Stack
+
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui ·
+Framer Motion · Supabase · Resend · Vitest. Deploys to Vercel.
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # then fill in the values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site runs without credentials — every page renders. Only the lead form
+needs them; without them `/api/lead` returns a 503 with a clear message.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Does |
+|---|---|
+| `npm run dev` | Dev server on :3000 |
+| `npm run build` | Production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm test` | Vitest |
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx          Header / main / Footer, fonts, metadata
+  globals.css         Design tokens (Tailwind v4 is CSS-first — no config file)
+  page.tsx            Home
+  how-it-works/ tech/ pricing/ about/ contact/ privacy/ terms/
+  api/lead/route.ts   Lead capture endpoint
+components/
+  layout/             Header, Footer, Logo, PageShell
+  lead-form.tsx       Waitlist + contact variants
+  ui/                 shadcn primitives
+lib/
+  site.ts             Nav, footer and legal links — single source of truth
+  leads.ts            Zod schema shared by client and server
+  fonts.ts            Inter (body) + Sora (display)
+  env.ts supabase.ts resend.ts   Server-only
+supabase/schema.sql   `leads` table DDL
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setting up the backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a Supabase project and run `supabase/schema.sql` in its SQL editor.
+2. Copy the project URL and **service role** key into `.env.local`.
+3. Create a Resend API key, verify your sending domain, and set
+   `RESEND_FROM_EMAIL` / `RESEND_TO_EMAIL`.
 
-## Deploy on Vercel
+The service role key bypasses row level security and must stay server-side —
+never prefix it with `NEXT_PUBLIC_`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploying
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to a Vercel project and add the same variables from `.env.example` under
+project settings. Set `NEXT_PUBLIC_SITE_URL` to the production origin so
+metadata and OG URLs resolve.
+
+## Current state
+
+Foundation only. Every page is a stub rendering its heading — **no marketing
+copy has been written yet**. See `CLAUDE.md` for conventions and
+`.claude/notes/decisions.md` for why things are the way they are.
