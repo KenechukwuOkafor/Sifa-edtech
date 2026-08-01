@@ -1,4 +1,3 @@
-import { PlaceholderValue } from "@/components/placeholder-value";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { Section } from "@/components/sections/section";
 
@@ -49,10 +48,8 @@ export function Traction() {
             as="li"
             className="rounded-xl border border-slate-200 bg-white p-6"
           >
-            <p className="font-display text-sm font-semibold">
-              <PlaceholderValue>
-                UNDER X SECONDS — fill from your MVP&rsquo;s real generation time
-              </PlaceholderValue>
+            <p className="font-display text-3xl leading-snug font-semibold text-primary-800">
+              Under 30 seconds
             </p>
             <p className="mt-2 text-sm text-slate-600">per lesson pack</p>
           </RevealItem>
