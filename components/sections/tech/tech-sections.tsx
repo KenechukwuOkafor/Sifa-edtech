@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 
 export function TechIntro() {
   return (
-    <Section tone="default" className="pb-12 lg:pb-16">
+    <Section tone="default" padBottom="tight">
       <div className="max-w-prose">
         <Reveal trigger="mount">
           <p className="mb-4 text-sm font-semibold tracking-wide text-accent-600 uppercase">

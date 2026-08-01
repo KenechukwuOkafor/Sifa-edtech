@@ -16,14 +16,42 @@ const TONE: Record<Tone, string> = {
   dark: "bg-primary-950 text-slate-300",
 };
 
+/**
+ * Vertical padding is a prop rather than something callers override through
+ * `className`.
+ *
+ * The section scale (`--spacing-section`) is a custom theme value, so
+ * tailwind-merge cannot classify `py-section-lg` and therefore cannot resolve
+ * it against a `pt-0` passed in `className` - `padding-block` simply wins and
+ * the override silently does nothing. Emitting exactly one class per property
+ * removes the conflict entirely.
+ */
+type Pad = "default" | "tight" | "none";
+
+const PAD_TOP: Record<Pad, string> = {
+  default: "pt-section lg:pt-section-lg",
+  tight: "pt-12 lg:pt-16",
+  none: "pt-0",
+};
+
+const PAD_BOTTOM: Record<Pad, string> = {
+  default: "pb-section lg:pb-section-lg",
+  tight: "pb-12 lg:pb-16",
+  none: "pb-0",
+};
+
 export function Section({
   id,
   tone = "default",
+  padTop = "default",
+  padBottom = "default",
   className,
   children,
 }: {
   id?: string;
   tone?: Tone;
+  padTop?: Pad;
+  padBottom?: Pad;
   className?: string;
   children: ReactNode;
 }) {
@@ -31,7 +59,9 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-20 py-section lg:py-section-lg",
+        "scroll-mt-20",
+        PAD_TOP[padTop],
+        PAD_BOTTOM[padBottom],
         TONE[tone],
         className,
       )}
