@@ -18,7 +18,7 @@ export type NavItem = {
 
 /** Primary navigation, rendered in the header and mirrored in the footer. */
 export const mainNav: NavItem[] = [
-  { label: "Product", href: "/" },
+  { label: "Home", href: "/" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Tech", href: "/tech" },
   { label: "Pricing", href: "/pricing" },
