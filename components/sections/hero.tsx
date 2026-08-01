@@ -48,13 +48,15 @@ export function Hero() {
           </Reveal>
 
           <Reveal trigger="mount" delay={0.15}>
+            {/* Primary action is the demo request, site-wide. The waitlist is
+                the low-friction fallback and stays visually lighter. */}
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
                 asChild
                 className="h-12 w-full bg-accent-500 px-7 text-base text-white hover:bg-accent-600 sm:w-auto"
               >
-                <Link href="#waitlist">
-                  Join the waitlist
+                <Link href="/contact">
+                  Request a demo
                   <ArrowRight className="size-4" />
                 </Link>
               </Button>
@@ -63,9 +65,20 @@ export function Hero() {
                 variant="outline"
                 className="h-12 w-full border-primary-200 px-7 text-base text-primary-800 hover:bg-primary-50 sm:w-auto"
               >
-                <Link href="/how-it-works">See how it works</Link>
+                <Link href="#waitlist">Join the waitlist</Link>
               </Button>
             </div>
+
+            <p className="mt-5 text-sm text-slate-500">
+              Or{" "}
+              <Link
+                href="/how-it-works"
+                className="font-medium text-primary-700 underline-offset-4 hover:underline"
+              >
+                see how it works
+              </Link>{" "}
+              first.
+            </p>
           </Reveal>
 
           <RevealGroup

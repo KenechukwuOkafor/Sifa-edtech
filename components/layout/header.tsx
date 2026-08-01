@@ -73,7 +73,7 @@ export function Header() {
 
         <div className="hidden lg:block">
           <Button asChild>
-            <Link href="/#waitlist">Join the waitlist</Link>
+            <Link href="/contact">Request a demo</Link>
           </Button>
         </div>
 
@@ -113,8 +113,8 @@ export function Header() {
 
             <div className="mt-6 px-4">
               <Button asChild className="w-full">
-                <Link href="/#waitlist" onClick={() => setOpen(false)}>
-                  Join the waitlist
+                <Link href="/contact" onClick={() => setOpen(false)}>
+                  Request a demo
                 </Link>
               </Button>
             </div>

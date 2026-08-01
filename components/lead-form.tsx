@@ -28,10 +28,13 @@ const COPY: Record<LeadType, { submit: string; pending: string; success: string 
     pending: "Joining…",
     success: "You're on the list. We'll be in touch soon.",
   },
+  // The contact variant renders on /contact, which is the destination for the
+  // site-wide "Request a demo" CTA. The label matches the button that leads
+  // there so the action keeps one name from click to confirmation.
   contact: {
-    submit: "Send message",
+    submit: "Request a demo",
     pending: "Sending…",
-    success: "Message sent. We'll reply within two working days.",
+    success: "Request received. We'll be in touch to arrange your walkthrough.",
   },
 };
 
