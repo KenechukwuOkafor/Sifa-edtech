@@ -4,10 +4,31 @@ import { Section } from "@/components/sections/section";
 /**
  * Guide §10 wants progress shown; §12 and §16 forbid inventing numbers.
  *
- * These three are product capabilities, not traction claims - what a pack
- * contains, how fast it generates, what it aligns to. No user counts, no pilot
- * numbers, no testimonials appear here until they are real.
+ * These are product capabilities, not traction claims - what a pack contains
+ * and how fast it generates. No user counts, pilot numbers, or testimonials
+ * appear here until they are real.
+ *
+ * Composition note: only genuinely comparable figures go in the stat row. The
+ * curriculum boards are an attribute, not a measurement, so they get their own
+ * full-width card rather than being forced into a third stat tile where the
+ * eye expects another number.
  */
+
+const STATS = [
+  {
+    /** Rendered visually; `spoken` replaces it for screen readers when the
+     *  visual form is an abbreviation. */
+    value: "5",
+    label: "materials per topic",
+  },
+  {
+    value: "<30s",
+    spoken: "Under 30 seconds",
+    label: "per lesson pack",
+  },
+];
+
+const CURRICULA = ["WAEC", "NECO", "NERDC"];
 
 export function Traction() {
   return (
@@ -33,35 +54,42 @@ export function Traction() {
           </p>
         </Reveal>
 
-        <RevealGroup as="ul" className="grid gap-4 sm:grid-cols-3 lg:col-span-7">
-          <RevealItem
-            as="li"
-            className="rounded-xl border border-slate-200 bg-white p-6"
-          >
-            <p className="font-display text-4xl font-semibold text-primary-800">
-              5
-            </p>
-            <p className="mt-2 text-sm text-slate-600">materials per topic</p>
-          </RevealItem>
+        <RevealGroup as="ul" className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+          {STATS.map(({ value, spoken, label }) => (
+            <RevealItem
+              as="li"
+              key={label}
+              className="rounded-xl border border-slate-200 bg-white p-6"
+            >
+              <p className="font-display text-5xl leading-none font-semibold tracking-tight text-primary-800 tabular-nums">
+                {spoken ? (
+                  <>
+                    <span aria-hidden="true">{value}</span>
+                    <span className="sr-only">{spoken}</span>
+                  </>
+                ) : (
+                  value
+                )}
+              </p>
+              <p className="mt-3 text-sm text-slate-600">{label}</p>
+            </RevealItem>
+          ))}
 
           <RevealItem
             as="li"
-            className="rounded-xl border border-slate-200 bg-white p-6"
+            className="rounded-xl border border-slate-200 bg-white p-6 sm:col-span-2"
           >
-            <p className="font-display text-3xl leading-snug font-semibold text-primary-800">
-              Under 30 seconds
-            </p>
-            <p className="mt-2 text-sm text-slate-600">per lesson pack</p>
-          </RevealItem>
-
-          <RevealItem
-            as="li"
-            className="rounded-xl border border-slate-200 bg-white p-6"
-          >
-            <p className="font-display text-xl leading-snug font-semibold text-primary-800">
-              WAEC · NECO · NERDC
-            </p>
-            <p className="mt-2 text-sm text-slate-600">curriculum-aligned</p>
+            <p className="text-sm text-slate-600">Curriculum aligned</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {CURRICULA.map((board) => (
+                <li
+                  key={board}
+                  className="rounded-full border border-primary-100 bg-primary-50 px-3.5 py-1.5 font-display text-sm font-semibold text-primary-800"
+                >
+                  {board}
+                </li>
+              ))}
+            </ul>
           </RevealItem>
         </RevealGroup>
       </div>
