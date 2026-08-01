@@ -14,6 +14,31 @@ curriculum leads), not individual consumers.
 
 Tone for any copy: clean, professional, trustworthy. B2B edtech, not playful.
 
+## The site development guide is binding
+
+`docs/site-development-guide.md` is a reviewer-facing credibility standard
+(the kind used for cloud/GPU credit programmes). **We are mirroring it.**
+`docs/site-requirements.md` is the working checklist derived from it.
+
+Read both before writing any page. The site must earn this sentence:
+
+> "We are a real incorporated startup building an AI-powered product, with a
+> technical team, a clear market, a working website, a serious use case."
+
+Non-negotiables from that guide:
+
+- **AI must be central**, with a dedicated *AI Technology* section explaining
+  what data it uses, what it generates, what techniques, and why GPU/cloud.
+- A **Technology & Infrastructure** section covering AWS and NVIDIA, phrased as
+  *"we plan to use"* wherever that is the truth.
+- **Market Opportunity**, **Traction / MVP status**, **Roadmap**, and **Team**
+  sections all exist. A visible technical team member is required.
+- **Never invent stats, traction, testimonials, partners, or team members.**
+  The guide forbids fake numbers outright; unproven figures must be labelled
+  "target" or "beta goal". Anything requiring real-world fact is blocked on
+  Kene, not to be filled with plausible text.
+- Avoid consulting/agency language. Sifa builds a product.
+
 ## Stack
 
 | Concern | Choice |
@@ -115,6 +140,12 @@ error, not a warning.
 Foundation only. Every page is a stub rendering its heading — **no marketing
 copy has been written yet, deliberately.** Do not invent product claims,
 pricing, testimonials, or customer names. Ask before writing copy.
+
+The current nav (Product / How It Works / Tech / Pricing / About / Contact)
+predates the site development guide and **does not yet cover** its required
+sections — AI Technology, Market Opportunity, Traction, Roadmap, Team. The
+information architecture needs reworking before copy is written; see
+`docs/site-requirements.md`.
 
 Placeholders awaiting real values: logo (wordmark text in
 `components/layout/logo.tsx`), social URLs and contact email in `lib/site.ts`,
