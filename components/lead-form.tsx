@@ -208,7 +208,11 @@ export function LeadForm({
         />
       </div>
 
-      <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">
+      <Button
+        type="submit"
+        disabled={pending}
+        className="h-11 w-full px-6 text-base sm:w-auto"
+      >
         {pending && <Loader2 className="size-4 animate-spin" />}
         {pending ? copy.pending : copy.submit}
       </Button>
