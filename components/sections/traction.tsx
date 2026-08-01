@@ -28,7 +28,7 @@ const STATS = [
   },
 ];
 
-const CURRICULA = ["WAEC", "NECO", "NERDC"];
+const CURRICULA = ["WAEC", "NECO", "NERDC", "IGCSE", "Cambridge"];
 
 export function Traction() {
   return (
