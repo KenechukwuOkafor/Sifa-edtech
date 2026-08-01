@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Sifa",
   /** Used by metadata; override in production via NEXT_PUBLIC_SITE_URL. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  contactEmail: "hello@sifa.africa",
+  contactEmail: "info@getsifa.site",
   company: "Sifa Technologies Ltd.",
 } as const;
 
