@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-label="Placeholder mockup of a generated Sifa lesson pack">
+  <rect width="960" height="600" rx="14" fill="#F8FAFC"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="960" height="96" rx="14" fill="#312E81"/>
+  <rect x="0" y="82" width="960" height="14" fill="#312E81"/>
+  <text x="40" y="44" font-family="Inter, sans-serif" font-size="11" fill="#A0A9E6">GENERATED LESSON PACK</text>
+  <text x="40" y="72" font-family="Sora, Inter, sans-serif" font-size="21" font-weight="600" fill="#FFFFFF">Topic title</text>
+  <rect x="742" y="34" width="178" height="28" rx="14" fill="#FFFFFF" opacity=".14"/>
+  <text x="760" y="53" font-family="Inter, sans-serif" font-size="11" fill="#E0E3F7">Aligned to scheme of work</text>
+
+  <!-- five artefact cards -->
+  <g font-family="Sora, Inter, sans-serif" font-size="13" font-weight="600" fill="#272563">
+    <rect x="40" y="132" width="168" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="40" y="132" width="168" height="4" rx="2" fill="#312E81"/>
+    <text x="60" y="170">Lesson plan</text>
+
+    <rect x="228" y="132" width="168" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="228" y="132" width="168" height="4" rx="2" fill="#464BAD"/>
+    <text x="248" y="170">Slides</text>
+
+    <rect x="416" y="132" width="168" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="416" y="132" width="168" height="4" rx="2" fill="#5A63C7"/>
+    <text x="436" y="170">Quiz</text>
+
+    <rect x="604" y="132" width="168" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="604" y="132" width="168" height="4" rx="2" fill="#F08423"/>
+    <text x="624" y="170">Homework</text>
+
+    <rect x="792" y="132" width="128" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="792" y="132" width="128" height="4" rx="2" fill="#D96A18"/>
+    <text x="812" y="170">Marking</text>
+  </g>
+
+  <!-- card body lines -->
+  <g fill="#E2E8F0">
+    <rect x="60" y="192" width="128" height="8" rx="4"/><rect x="60" y="212" width="108" height="8" rx="4"/>
+    <rect x="60" y="232" width="118" height="8" rx="4"/><rect x="60" y="252" width="92" height="8" rx="4"/>
+    <rect x="60" y="272" width="112" height="8" rx="4"/>
+
+    <rect x="248" y="192" width="128" height="52" rx="4"/><rect x="248" y="256" width="96" height="8" rx="4"/>
+    <rect x="248" y="276" width="112" height="8" rx="4"/>
+
+    <rect x="436" y="192" width="128" height="8" rx="4"/><rect x="436" y="212" width="104" height="8" rx="4"/>
+    <rect x="436" y="240" width="128" height="8" rx="4"/><rect x="436" y="260" width="88" height="8" rx="4"/>
+    <rect x="436" y="288" width="116" height="8" rx="4"/>
+
+    <rect x="624" y="192" width="128" height="8" rx="4"/><rect x="624" y="212" width="96" height="8" rx="4"/>
+    <rect x="624" y="232" width="120" height="8" rx="4"/><rect x="624" y="252" width="84" height="8" rx="4"/>
+
+    <rect x="812" y="192" width="88" height="8" rx="4"/><rect x="812" y="212" width="72" height="8" rx="4"/>
+    <rect x="812" y="232" width="84" height="8" rx="4"/><rect x="812" y="252" width="64" height="8" rx="4"/>
+  </g>
+
+  <!-- objectives panel -->
+  <rect x="40" y="360" width="560" height="196" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="392" font-family="Inter, sans-serif" font-size="11" fill="#64748B">CURRICULUM OBJECTIVES COVERED</text>
+  <g>
+    <circle cx="72" cy="422" r="6" fill="#F08423"/><rect x="90" y="417" width="392" height="9" rx="4.5" fill="#E2E8F0"/>
+    <circle cx="72" cy="454" r="6" fill="#F08423"/><rect x="90" y="449" width="344" height="9" rx="4.5" fill="#E2E8F0"/>
+    <circle cx="72" cy="486" r="6" fill="#F08423"/><rect x="90" y="481" width="416" height="9" rx="4.5" fill="#E2E8F0"/>
+    <circle cx="72" cy="518" r="6" fill="#F08423"/><rect x="90" y="513" width="308" height="9" rx="4.5" fill="#E2E8F0"/>
+  </g>
+
+  <!-- source panel -->
+  <rect x="620" y="360" width="300" height="196" rx="10" fill="#EEF0FB"/>
+  <text x="644" y="392" font-family="Inter, sans-serif" font-size="11" fill="#3B3D8F">GROUNDED IN</text>
+  <g font-family="Inter, sans-serif" font-size="12" fill="#312E81">
+    <text x="644" y="424">WAEC syllabus</text>
+    <text x="644" y="452">NECO syllabus</text>
+    <text x="644" y="480">NERDC scheme of work</text>
+    <text x="644" y="508">Past examination papers</text>
+  </g>
+
+  <rect x="40" y="570" width="196" height="20" rx="10" fill="#FEF3C7"/>
+  <text x="52" y="584" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#92400E">PLACEHOLDER MOCKUP</text>
+</svg>
