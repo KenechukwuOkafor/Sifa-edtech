@@ -39,11 +39,15 @@ export function Hero() {
           </Reveal>
 
           <Reveal trigger="mount" delay={0.1}>
+            {/* Does not list the five materials - the chips below already do,
+                and repeating them cost the space the curriculum list needed.
+                Keep an explicit AI reference here: it is the only one above
+                the fold, and the site guide wants AI central. */}
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-600 lg:text-xl">
-              Sifa gives your teachers AI-generated lesson packs — plan, slides,
-              quiz, homework, and marking guide — aligned to WAEC, NECO, and
-              your scheme of work. Consistent quality, hours saved, in every
-              classroom.
+              Your teachers type a topic; Sifa&rsquo;s AI builds the complete
+              teaching pack — aligned to your scheme of work, whether you follow
+              WAEC, NECO, NERDC, BECE, IGCSE or Cambridge. The same standard in
+              every classroom, without the evenings lost to prep.
             </p>
           </Reveal>
 
