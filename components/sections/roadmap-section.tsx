@@ -94,7 +94,8 @@ const HORIZONS: Horizon[] = [
 
 export function RoadmapSection() {
   return (
-    <Section tone="default">
+    // /about links here rather than duplicating the roadmap.
+    <Section id="roadmap" tone="default">
       <div className="max-w-prose">
         <Reveal>
           <p className="mb-4 text-sm font-semibold tracking-wide text-accent-600 uppercase">
