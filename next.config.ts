@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Add remote CMS/storage hosts here when illustrations move off /public.
     remotePatterns: [],
+    // The product mockups in /public/mockups are SVG. This flag only matters
+    // for images Next actually serves, and `remotePatterns` is empty, so the
+    // only SVGs reachable here are the ones committed to this repo. The CSP
+    // below neuters scripting inside them regardless.
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   async headers() {

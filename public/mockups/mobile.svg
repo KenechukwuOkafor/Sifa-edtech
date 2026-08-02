@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 720" width="400" height="720" role="img" aria-label="Placeholder mockup of Sifa on mobile">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 720" width="400" height="720" role="img" aria-label="Sifa on a phone, showing a finished Photosynthesis pack ready to edit and download">
   <rect width="400" height="720" fill="none"/>
 
   <!-- device -->
@@ -17,21 +17,26 @@
   <line x1="70" y1="122" x2="330" y2="122" stroke="#E2E8F0"/>
 
   <!-- hero -->
-  <rect x="92" y="146" width="180" height="13" rx="6.5" fill="#312E81"/>
-  <rect x="92" y="170" width="216" height="13" rx="6.5" fill="#312E81"/>
-  <rect x="92" y="194" width="132" height="13" rx="6.5" fill="#312E81"/>
-  <rect x="92" y="224" width="208" height="8" rx="4" fill="#CBD5E1"/>
-  <rect x="92" y="240" width="184" height="8" rx="4" fill="#CBD5E1"/>
-  <rect x="92" y="256" width="196" height="8" rx="4" fill="#CBD5E1"/>
+  <g font-family="Sora, Inter, sans-serif" font-size="16" font-weight="600" fill="#312E81">
+    <text x="92" y="158">Your Photosynthesis</text>
+    <text x="92" y="182">pack is ready to</text>
+    <text x="92" y="206">teach.</text>
+  </g>
+  <g font-family="Inter, sans-serif" font-size="10" fill="#64748B">
+    <text x="92" y="231">Edit any material, then download</text>
+    <text x="92" y="247">as Word, PowerPoint, PDF or</text>
+    <text x="92" y="263">Google Docs.</text>
+  </g>
 
   <rect x="92" y="286" width="150" height="40" rx="10" fill="#F08423"/>
-  <text x="112" y="311" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Join the waitlist</text>
+  <text x="112" y="311" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Download pack</text>
 
   <!-- pack preview card -->
   <rect x="92" y="352" width="216" height="128" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
   <rect x="92" y="352" width="216" height="4" rx="2" fill="#312E81"/>
   <text x="110" y="384" font-family="Inter, sans-serif" font-size="9" fill="#64748B">LESSON PACK</text>
-  <rect x="110" y="396" width="140" height="10" rx="5" fill="#E2E8F0"/>
+  <text x="110" y="405" font-family="Sora, Inter, sans-serif" font-size="11" font-weight="600" fill="#1E293B">Photosynthesis</text>
+  <!-- One chip per material in the pack. -->
   <g fill="#EEF0FB">
     <rect x="110" y="420" width="52" height="20" rx="10"/>
     <rect x="168" y="420" width="40" height="20" rx="10"/>
@@ -39,19 +44,23 @@
     <rect x="110" y="446" width="60" height="20" rx="10"/>
     <rect x="176" y="446" width="66" height="20" rx="10"/>
   </g>
+  <g font-family="Inter, sans-serif" font-size="8" fill="#3B3D8F" text-anchor="middle">
+    <text x="136" y="433">Plan</text>
+    <text x="188" y="433">Slides</text>
+    <text x="237" y="433">Quiz</text>
+    <text x="140" y="459">Homework</text>
+    <text x="209" y="459">Marking</text>
+  </g>
 
   <!-- feature rows -->
-  <g>
-    <circle cx="106" cy="512" r="12" fill="#FFF8ED"/><rect x="130" y="507" width="150" height="9" rx="4.5" fill="#E2E8F0"/>
-    <circle cx="106" cy="548" r="12" fill="#FFF8ED"/><rect x="130" y="543" width="124" height="9" rx="4.5" fill="#E2E8F0"/>
-    <circle cx="106" cy="584" r="12" fill="#FFF8ED"/><rect x="130" y="579" width="164" height="9" rx="4.5" fill="#E2E8F0"/>
+  <g font-family="Inter, sans-serif" font-size="10" fill="#475569">
+    <circle cx="106" cy="512" r="12" fill="#FFF8ED"/><text x="130" y="516">Edit any material inline</text>
+    <circle cx="106" cy="548" r="12" fill="#FFF8ED"/><text x="130" y="552">Word, PowerPoint, PDF</text>
+    <circle cx="106" cy="584" r="12" fill="#FFF8ED"/><text x="130" y="588">Ready for the classroom</text>
   </g>
 
   <!-- footer -->
   <rect x="70" y="612" width="260" height="58" fill="#1A1842"/>
   <text x="92" y="638" font-family="Sora, Inter, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Sifa</text>
-  <rect x="92" y="648" width="120" height="7" rx="3.5" fill="#FFFFFF" opacity=".25"/>
-
-  <rect x="102" y="690" width="196" height="20" rx="10" fill="#FEF3C7"/>
-  <text x="114" y="704" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#92400E">PLACEHOLDER MOCKUP</text>
+  <text x="92" y="656" font-family="Inter, sans-serif" font-size="8" fill="#FFFFFF" opacity=".6">Lesson packs for schools</text>
 </svg>
