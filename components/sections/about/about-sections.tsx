@@ -2,8 +2,12 @@ import Link from "next/link";
 import {
   Banknote,
   Building2,
+  CalendarDays,
+  Globe,
   MapPin,
+  Rocket,
   TrendingUp,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -13,40 +17,81 @@ import { Button } from "@/components/ui/button";
 
 /* ---------------------------------------------------------------- 1. Intro */
 
+/**
+ * The reviewer-facing half of the hero. A school buyer reads the story; someone
+ * assessing whether this is a real company wants these four lines, and should
+ * not have to hunt for them.
+ *
+ * The stage line must track the home page and the traction section below. If
+ * the pilot count changes, it changes in all three places.
+ */
+const COMPANY: { icon: LucideIcon; term: string; detail: string }[] = [
+  { icon: MapPin, term: "Based in", detail: "Lagos, Nigeria" },
+  { icon: CalendarDays, term: "Founded", detail: "2025" },
+  { icon: Rocket, term: "Stage", detail: "Beta, with two pilot schools" },
+  { icon: Users, term: "Team", detail: "Two — product and engineering" },
+];
+
 export function AboutIntro() {
   return (
     <Section tone="default" padBottom="tight">
-      <div className="max-w-prose">
-        <Reveal trigger="mount">
-          <p className="mb-4 text-sm font-semibold tracking-wide text-accent-600 uppercase">
-            About
-          </p>
-          <h1 className="text-4xl leading-tight font-semibold text-balance text-primary-900 lg:text-5xl">
-            Teaching time, given back.
-          </h1>
-        </Reveal>
-        <Reveal trigger="mount" delay={0.08}>
-          <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate-600">
-            <p>
-              Sifa started from one observation: teachers spend more time
-              assembling materials than they spend teaching with them.
+      <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-7">
+          <Reveal trigger="mount">
+            <p className="mb-4 text-sm font-semibold tracking-wide text-accent-600 uppercase">
+              About
             </p>
-            <p>
-              A lesson plan, a set of slides, a quiz, homework, and a marking
-              guide — for a single topic. Multiply that across a full timetable
-              and a full term, and preparation stops being part of the job and
-              quietly becomes the job. It happens after school, at home, at
-              weekends. And it rarely gets reused, because it lives on one
-              teacher&rsquo;s laptop in one teacher&rsquo;s format.
+            {/* The old heading said the same thing as the closing line below it.
+                This one states the problem; the closer states the mission. */}
+            <h1 className="text-4xl leading-tight font-semibold text-balance text-primary-900 lg:text-5xl">
+              Preparation quietly became the job.
+            </h1>
+          </Reveal>
+          <Reveal trigger="mount" delay={0.08}>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate-600">
+              <p>
+                Sifa started from one observation: teachers spend more time
+                assembling materials than they spend teaching with them. A
+                lesson plan, slides, a quiz, homework and a marking guide — for
+                a single topic, across a full timetable, every week of term. It
+                happens after school, at home, at weekends, and it rarely gets
+                reused because it lives on one teacher&rsquo;s laptop in one
+                teacher&rsquo;s format.
+              </p>
+              <p>
+                That time has somewhere better to go — to the second explanation
+                a student needs, to marking that changes the next lesson, to the
+                parts of teaching a machine cannot do.
+              </p>
+              <p className="font-medium text-primary-900">
+                Sifa exists to give it back.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal trigger="mount" delay={0.16} className="lg:col-span-5">
+          <div className="rounded-2xl bg-slate-50 p-7 ring-1 ring-slate-200 sm:p-8">
+            <p className="font-display text-lg font-semibold text-primary-900">
+              Sifa Technologies Ltd
             </p>
-            <p>
-              That time has somewhere better to go — to the second explanation a
-              student needs, to marking that actually changes the next lesson,
-              to the parts of teaching a machine cannot do.
-            </p>
-            <p className="font-medium text-primary-900">
-              Sifa exists to give it back.
-            </p>
+            <ul className="mt-7 space-y-6">
+              {COMPANY.map(({ icon: Icon, term, detail }) => (
+                <li key={term} className="flex gap-4">
+                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-white text-primary-700 ring-1 ring-slate-200">
+                    <Icon className="size-4.5" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                      {term}
+                    </p>
+                    <p className="mt-1 leading-relaxed text-primary-900">
+                      {detail}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </div>
@@ -169,7 +214,8 @@ const MARKET: { icon: LucideIcon; term: string; detail: string }[] = [
       "Primary and secondary schools. Principals, proprietors and heads of department buy Sifa; their teachers use it every week.",
   },
   {
-    icon: MapPin,
+    // Globe rather than MapPin: the hero panel above already uses MapPin.
+    icon: Globe,
     term: "Where we are starting",
     detail:
       "Nigeria first, against the exam boards schools here already teach to — then the neighbouring markets that share them.",
