@@ -219,10 +219,6 @@ export function LeadForm({
         {pending && <Loader2 className="size-4 animate-spin" />}
         {pending ? copy.pending : copy.submit}
       </Button>
-
-      <p className="text-xs text-slate-500">
-        We only use your details to contact you about Sifa. No spam, ever.
-      </p>
     </form>
   );
 }
