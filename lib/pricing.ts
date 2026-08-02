@@ -36,7 +36,7 @@ export const pricingTiers: PricingTier[] = [
       "Up to 10 teachers",
       "Up to 150 lesson packs per month",
       "All 5 materials per pack (plan, slides, quiz, homework, marking guide)",
-      "WAEC / NECO / NERDC curriculum alignment",
+      "Alignment to WAEC, NECO, NERDC, BECE, IGCSE and Cambridge",
       "Email support",
     ],
     cta: { label: "Request a demo", href: "/contact" },

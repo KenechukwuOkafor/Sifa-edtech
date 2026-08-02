@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import {
   FounderPricing,
-  LessonPackNote,
   PricingCta,
   PricingFaq,
   PricingIntro,
@@ -19,7 +18,6 @@ export default function PricingPage() {
     <>
       <PricingIntro />
       <FounderPricing />
-      <LessonPackNote />
       <PricingFaq />
       <PricingCta />
     </>
