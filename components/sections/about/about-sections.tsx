@@ -41,10 +41,11 @@ export function AboutIntro() {
             <p className="mb-4 text-sm font-semibold tracking-wide text-accent-600 uppercase">
               About
             </p>
-            {/* The old heading said the same thing as the closing line below it.
-                This one states the problem; the closer states the mission. */}
+            {/* Deliberately not a restatement of the closing line below it.
+                This states the belief; "Sifa exists to give it back" states
+                what we do about it. Keep those two doing different jobs. */}
             <h1 className="text-4xl leading-tight font-semibold text-balance text-primary-900 lg:text-5xl">
-              Preparation quietly became the job.
+              Teachers should be teaching.
             </h1>
           </Reveal>
           <Reveal trigger="mount" delay={0.08}>
