@@ -28,13 +28,13 @@ export function Hero() {
           <Reveal trigger="mount">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-primary-700 shadow-sm backdrop-blur">
               <span className="size-1.5 rounded-full bg-accent-500" />
-              Beta · Built for African schools
+              Beta · Built for African institutions of learning
             </span>
           </Reveal>
 
           <Reveal trigger="mount" delay={0.05}>
             <h1 className="mt-7 text-4xl leading-[1.08] font-semibold text-balance text-primary-900 sm:text-5xl lg:text-6xl">
-              Every lesson, planned in seconds — across your whole school.
+              Every lesson, planned in seconds — across your whole institution.
             </h1>
           </Reveal>
 
@@ -52,8 +52,9 @@ export function Hero() {
           </Reveal>
 
           <Reveal trigger="mount" delay={0.15}>
-            {/* Primary action is the demo request, site-wide. The waitlist is
-                the low-friction fallback and stays visually lighter. */}
+            {/* Primary action is the demo request, site-wide. "Get started" is
+                the low-friction fallback into the sign-up form and stays
+                visually lighter. */}
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
                 asChild
@@ -69,7 +70,7 @@ export function Hero() {
                 variant="outline"
                 className="h-12 w-full border-primary-200 px-7 text-base text-primary-800 hover:bg-primary-50 sm:w-auto"
               >
-                <Link href="#waitlist">Join the waitlist</Link>
+                <Link href="#get-started">Get started</Link>
               </Button>
             </div>
 

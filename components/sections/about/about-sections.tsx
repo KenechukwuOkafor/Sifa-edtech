@@ -14,6 +14,7 @@ import {
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { Button } from "@/components/ui/button";
+import { team } from "@/lib/content/team";
 
 /* ---------------------------------------------------------------- 1. Intro */
 
@@ -139,38 +140,21 @@ export function Approach() {
  * Guide §13 requires a visible technical team member, hence the marker on the
  * CTO - it is the thing a reviewer looks for, so do not remove it.
  *
- * The role lines describe scope only. They are what the titles already mean,
- * not claimed credentials: no employer, tenure or qualification appears here
- * because none has been supplied. Add real bios, photos and LinkedIn URLs when
- * they exist rather than inventing them.
+ * People, photos and handles come from lib/content/team.ts, shared with /team
+ * and the home page. This is the compact listing: initials and the one-line
+ * `scope`, with the large-photo treatment reserved for /team.
  */
-const TEAM = [
-  {
-    name: "Gabriel Okafor",
-    role: "Chief Executive Officer",
-    initials: "GO",
-    scope: "Product direction, and the schools Sifa works with.",
-  },
-  {
-    name: "David Brown",
-    role: "Chief Technology Officer",
-    initials: "DB",
-    scope: "The generation engine, and the infrastructure it runs on.",
-    technical: true,
-  },
-];
-
 export function Team() {
   return (
     <Section id="team" tone="default">
       <SectionHeading
         eyebrow="Team"
         title="Who is building Sifa."
-        lede="A small team, working directly with the schools using the product."
+        lede="A small team, working directly with the institutions using the product."
       />
 
       <RevealGroup as="ul" className="mt-14 grid gap-6 sm:grid-cols-2">
-        {TEAM.map(({ name, role, initials, scope, technical }) => (
+        {team.map(({ name, role, initials, scope, technical }) => (
           <RevealItem
             as="li"
             key={name}
@@ -197,6 +181,15 @@ export function Team() {
           </RevealItem>
         ))}
       </RevealGroup>
+
+      <Reveal className="mt-10">
+        <Link
+          href="/team"
+          className="font-medium text-primary-700 underline-offset-4 hover:underline"
+        >
+          Meet the team →
+        </Link>
+      </Reveal>
     </Section>
   );
 }

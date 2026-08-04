@@ -45,8 +45,12 @@ export const mainNav: NavItem[] = [
   { label: "Tech", href: "/tech" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ];
+
+/** Footer "Company" column. Mirrors the header exactly. */
+export const footerNav: NavItem[] = mainNav;
 
 export const legalNav: NavItem[] = [
   { label: "Privacy Policy", href: "/privacy" },

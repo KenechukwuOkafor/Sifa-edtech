@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Logo } from "@/components/layout/logo";
-import { legalNav, mainNav, siteConfig, socialNav } from "@/lib/site";
+import { footerNav, legalNav, siteConfig, socialNav } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -24,7 +24,7 @@ export function Footer() {
             </a>
           </div>
 
-          <FooterColumn title="Company" items={mainNav} />
+          <FooterColumn title="Company" items={footerNav} />
 
           <div className="flex flex-col gap-8">
             <FooterColumn title="Legal" items={legalNav} />

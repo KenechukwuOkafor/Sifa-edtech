@@ -6,7 +6,7 @@ import {
   type ContentAuditEntry,
 } from "@/lib/content/placeholder";
 import { roadmap } from "@/lib/content/roadmap";
-import { advisors, hasVisibleDeveloper, team } from "@/lib/content/team";
+import { advisors, hasRealSocials, hasVisibleDeveloper, team } from "@/lib/content/team";
 import {
   productStage,
   testimonials,
@@ -20,7 +20,15 @@ import {
  */
 export function auditContent(): ContentAuditEntry[] {
   const entries: ContentAuditEntry[] = [
-    ...collectPlaceholders("team", team, (m) => `${m.role}`, (m) => m.name),
+    // The names and roles are real; the photo files and social handles are
+    // not, so the note says which, rather than implying the person is a
+    // stand-in.
+    ...collectPlaceholders(
+      "team",
+      team,
+      (m) => `${m.name} — ${m.role}`,
+      () => "Awaiting photo file and real social URLs.",
+    ),
     ...collectPlaceholders("advisors", advisors, (a) => a.role, (a) => a.name),
     ...collectPlaceholders("traction", traction, (t) => t.label, (t) => t.value),
     ...collectPlaceholders("traction", tractionNotes, (n) => n.id, (n) => n.text),
@@ -61,6 +69,11 @@ export function auditBlockers(): string[] {
   // Guide §13 requires visible technical staff.
   if (!hasVisibleDeveloper) {
     blockers.push("No team member is marked `technical` (guide §13).");
+  }
+
+  // A team page whose social icons all point at "#" reads worse than no icons.
+  if (!hasRealSocials) {
+    blockers.push("Team social links are still `#` stand-ins (guide §13).");
   }
 
   // Guide §16 lists fake testimonials as a disqualifier.

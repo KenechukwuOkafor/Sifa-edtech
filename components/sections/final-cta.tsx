@@ -3,19 +3,23 @@ import { Reveal } from "@/components/motion/reveal";
 import { Section } from "@/components/sections/section";
 
 /**
- * Guide §12. The waitlist anchor the header CTA and hero both point at - keep
- * the `waitlist` id if this section ever moves.
+ * Guide §12. The sign-up anchor the hero points at - keep the `get-started`
+ * id if this section ever moves.
+ *
+ * The form still POSTs `type: "waitlist"`, which is the stored lead type and a
+ * database enum. Only the label a visitor reads changed; do not rename the
+ * variant to match the button.
  */
 export function FinalCta() {
   return (
-    <Section id="waitlist" tone="default">
+    <Section id="get-started" tone="default">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
           <h2 className="text-3xl leading-tight font-semibold text-balance text-primary-900 sm:text-4xl">
-            Bring Sifa to your school.
+            Bring Sifa to your institution.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            Join the waitlist for pilot access — we&rsquo;re onboarding schools
+            Get started with pilot access — we&rsquo;re onboarding institutions
             now.
           </p>
         </Reveal>
